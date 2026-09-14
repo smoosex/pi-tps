@@ -35,22 +35,26 @@ cumulative and a long one becomes a rolling readout.
 
 ## Install
 
-Local path, via `settings.json`:
+```bash
+pi install npm:@smoose/pi-tps
+```
+
+Or from a local checkout — point settings at the directory:
 
 ```json
-{ "extensions": ["/Users/smoose/Documents/Code/mine/pi-extensions/pi-tps"] }
+{ "extensions": ["/path/to/pi-tps"] }
 ```
 
-Or symlink it into the auto-discovered directory (`/reload` picks it up):
+or symlink it into the auto-discovered directory (`/reload` picks it up):
 
 ```bash
-ln -s /Users/smoose/Documents/Code/mine/pi-extensions/pi-tps ~/.pi/agent/extensions/pi-tps
+ln -s /path/to/pi-tps ~/.pi/agent/extensions/pi-tps
 ```
 
-Or try it once without installing:
+Or run a package once without installing it:
 
 ```bash
-pi -e /Users/smoose/Documents/Code/mine/pi-extensions/pi-tps/index.ts
+pi -e npm:@smoose/pi-tps
 ```
 
 ## Footer wiring
@@ -88,3 +92,10 @@ change and those tokens were still generated. Auto-compaction does not clear it
 either.
 
 The window holds the 200 most recent samples, and the oldest drop out beyond that.
+
+## Development
+
+```bash
+bun install
+bun run typecheck
+```

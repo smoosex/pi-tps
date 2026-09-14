@@ -1,7 +1,7 @@
 {
   "name": "@smoose/pi-tps",
-  "version": "0.1.0",
-  "description": "Session-cumulative decode throughput (tok/s) for pi, measured the deepseek-harness way",
+  "version": "0.0.1",
+  "description": "Decode throughput (tok/s) in the footer of the pi coding agent",
   "type": "module",
   "files": [
     "*.ts",
@@ -14,16 +14,30 @@
     "coding-agent",
     "extension",
     "tps",
-    "throughput"
+    "tokens-per-second",
+    "throughput",
+    "footer"
   ],
+  "author": "smoose",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/smoosex/pi-tps.git"
   },
-  "homepage": "https://github.com/smoosex/pi-tps",
+  "homepage": "https://github.com/smoosex/pi-tps#readme",
   "bugs": {
     "url": "https://github.com/smoosex/pi-tps/issues"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "tsc --noEmit"
   },
   "peerDependencies": {
     "@earendil-works/pi-ai": "*",
@@ -31,7 +45,8 @@
   },
   "devDependencies": {
     "@earendil-works/pi-ai": "^0.85.1",
-    "@earendil-works/pi-coding-agent": "^0.85.1"
+    "@earendil-works/pi-coding-agent": "^0.85.1",
+    "typescript": "^7.0.2"
   },
   "pi": {
     "extensions": [
