@@ -1,0 +1,41 @@
+{
+  "name": "@smoose/pi-tps",
+  "version": "0.1.0",
+  "description": "Session-cumulative decode throughput (tok/s) for pi, measured the deepseek-harness way",
+  "type": "module",
+  "files": [
+    "*.ts",
+    "README.md",
+    "package.json"
+  ],
+  "keywords": [
+    "pi-package",
+    "pi",
+    "coding-agent",
+    "extension",
+    "tps",
+    "throughput"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smoosex/pi-tps.git"
+  },
+  "homepage": "https://github.com/smoosex/pi-tps",
+  "bugs": {
+    "url": "https://github.com/smoosex/pi-tps/issues"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-ai": "^0.85.1",
+    "@earendil-works/pi-coding-agent": "^0.85.1"
+  },
+  "pi": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}
