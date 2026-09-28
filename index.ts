@@ -13,7 +13,7 @@
 
 import type { ExtensionAPI, ExtensionContext } from "@earendil-works/pi-coding-agent";
 import {
-  formatTokensPerSecond,
+  formatThroughput,
   isTokenDelta,
   outputTokens,
   pushSample,
@@ -30,7 +30,7 @@ export default function (pi: ExtensionAPI) {
 
   function publish(ctx: ExtensionContext): void {
     const value = tokensPerSecond(samples);
-    ctx.ui.setStatus(STATUS_KEY, value === undefined ? undefined : formatTokensPerSecond(value));
+    ctx.ui.setStatus(STATUS_KEY, value === undefined ? undefined : formatThroughput(value));
   }
 
   /** Drop the window and blank the footer slot: the old figure describes work that no longer applies. */

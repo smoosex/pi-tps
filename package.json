@@ -1,6 +1,6 @@
 {
   "name": "@smoose/pi-tps",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Decode throughput (tok/s) in the footer of the pi coding agent",
   "type": "module",
   "files": [

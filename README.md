@@ -2,8 +2,9 @@
 
 Decode throughput for pi: how fast the model is actually generating, in the footer.
 
-`20 tok/s` appears once an assistant message settles, and keeps running for the
-session.
+`<icon> 20 tok/s` appears once an assistant message settles, and keeps running
+for the session. The icon tracks the figure: slow (<100), medium (100–200),
+full (>200). It needs a Nerd Font; without one the icon renders as tofu.
 
 ## What it measures
 
@@ -67,7 +68,7 @@ custom item and a segment to `~/.pi/agent/settings.json`:
   "footer": {
     "segments": ["model", "thinking", "path", "git", "context_pct", "custom:tps", "cost"],
     "customItems": [
-      { "id": "tps", "statusKey": "tps", "prefix": "TPS", "color": "accent", "hideWhenMissing": true }
+      { "id": "tps", "statusKey": "tps", "color": "accent", "hideWhenMissing": true }
     ]
   }
 }

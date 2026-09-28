@@ -69,6 +69,21 @@ export function formatTokensPerSecond(tps: number): string {
   return `${value} tok/s`;
 }
 
+const SLOW_ICON = "\u{F0F86}";
+const MEDIUM_ICON = "\u{F0F85}";
+const FAST_ICON = "\u{F04C5}";
+
+export function throughputIcon(tps: number): string {
+  const clamped = Math.max(0, tps);
+  if (clamped < 100) return SLOW_ICON;
+  if (clamped <= 200) return MEDIUM_ICON;
+  return FAST_ICON;
+}
+
+export function formatThroughput(tps: number): string {
+  return `${throughputIcon(tps)} ${formatTokensPerSecond(tps)}`;
+}
+
 /**
  * Whether one stream event carries model-emitted output, i.e. the model has
  * started decoding. Block/usage/finish boundaries do not qualify, and an empty
